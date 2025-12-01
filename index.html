@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Om Galla Bhandar | Premium Grain Merchants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Canvas Background */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+        }
+
+        /* Glassmorphism Classes */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .glass-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 215, 0, 0.1); /* Subtle Gold Border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        /* Text Gradients */
+        .text-gold {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="canvas-container">
+        <canvas id="grainCanvas"></canvas>
+    </div>
+
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold tracking-wider text-white">
+                        HARI OM <span class="text-amber-500">.</span>
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-sm font-medium hover:text-amber-400 transition">Home</a>
+                        <a href="#about" class="text-sm font-medium hover:text-amber-400 transition">About</a>
+                        <a href="#products" class="text-sm font-medium hover:text-amber-400 transition">Products</a>
+                        <a href="#contact" class="px-4 py-2 rounded-full bg-amber-600 hover:bg-amber-500 text-white text-sm font-medium transition shadow-lg shadow-amber-900/20">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="relative z-10">
+
+        <section id="home" class="min-h-screen flex items-center justify-center px-4">
+            <div class="text-center max-w-4xl mx-auto fade-in">
+                <p class="text-amber-500 tracking-[0.2em] text-sm md:text-base font-bold uppercase mb-4">Est. 2021 • Sunil Kumar Singh</p>
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+                    Quality Grains.<br>
+                    <span class="text-gold">Honest Trade.</span>
+                </h1>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10 font-light">
+                    Hari Om Galla Bhandar is a premier wholesale and retail trading house dealing in the finest food grains. We connect the harvest of Bihar to the tables of India.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="#contact" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold transition duration-300 shadow-lg shadow-amber-900/30">
+                        Get a Quote
+                    </a>
+                    <a href="#products" class="px-8 py-4 glass hover:bg-white/10 text-white rounded-lg font-semibold transition duration-300">
+                        View Products
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h2 class="text-3xl font-bold text-white mb-6">Deep Roots in <span class="text-amber-500">Rohtas</span></h2>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Located in the heart of Bihar's agricultural belt, Hari Om Galla Bhandar has established itself as a trusted name in the grain market. Under the proprietorship of <strong>Mr. Sunil Kumar Singh</strong>, we bridge the gap between farmers and consumers with transparency and integrity.
+                        </p>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Official GST Registered Business</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Direct Farmer Connections</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Wholesale & Retail Supply Chain</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass p-6 rounded-xl text-center">
+                            <div class="text-4xl font-bold text-amber-500 mb-2">100%</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-wider">Quality Assured</div>
+                        </div>
+                        <div class="glass p-6 rounded-xl text-center">
+                            <div class="text-4xl font-bold text-amber-500 mb-2">2021</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-wider">Established</div>
+                        </div>
+                        <div class="glass p-6 rounded-xl text-center col-span-2">
+                            <div class="text-4xl font-bold text-amber-500 mb-2">Retail & Bulk</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-wider">Flexible Orders</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-20 px-4 bg-black/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Our Products</h2>
+                    <p class="text-gray-400">Premium staples sourced directly from the finest fields.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                            <svg class="w-24 h-24 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-400 mb-2">Rice</h3>
+                        <p class="text-sm text-gray-400 mb-4">Premium quality rice varieties. Cleaned, sorted, and ready for retail or bulk distribution.</p>
+                        <span class="text-xs font-mono text-gray-500 border border-gray-700 px-2 py-1 rounded">HSN: 1006</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
+                        <h3 class="text-xl font-bold text-amber-400 mb-2">Wheat & Meslin</h3>
+                        <p class="text-sm text-gray-400 mb-4">Golden whole wheat grains sourced from the best local harvests in Bihar.</p>
+                        <span class="text-xs font-mono text-gray-500 border border-gray-700 px-2 py-1 rounded">HSN: 1001</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
+                        <h3 class="text-xl font-bold text-amber-400 mb-2">Flour (Atta)</h3>
+                        <p class="text-sm text-gray-400 mb-4">Freshly milled wheat flour ensuring softness and taste for every meal.</p>
+                        <span class="text-xs font-mono text-gray-500 border border-gray-700 px-2 py-1 rounded">HSN: 1101</span>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl relative overflow-hidden group">
+                        <h3 class="text-xl font-bold text-amber-400 mb-2">Bran & Residues</h3>
+                        <p class="text-sm text-gray-400 mb-4">High-quality bran and residues suitable for various agricultural and feed needs.</p>
+                        <span class="text-xs font-mono text-gray-500 border border-gray-700 px-2 py-1 rounded">HSN: 2302</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 px-4">
+            <div class="max-w-4xl mx-auto glass-card rounded-2xl p-8 md:p-12 border-t-4 border-t-amber-500">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-white mb-2">Visit Our Store</h2>
+                    <p class="text-gray-400">We are open for business at our registered premises.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-1">Proprietor</h4>
+                            <p class="text-xl text-white">Sunil Kumar Singh</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-1">GSTIN</h4>
+                            <p class="text-lg font-mono text-gray-300">10HVZPS5959D1ZT</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-1">Email / Phone</h4>
+                            <p class="text-base text-gray-300">contact@hariomgallabhandar.com</p>
+                            <p class="text-sm text-gray-500">(Placeholder for real contact info)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold text-amber-500 uppercase tracking-widest">Registered Address</h4>
+                        <address class="not-italic text-gray-300 text-lg leading-relaxed">
+                            Khata No-27, Plot No-147,<br>
+                            Karhansi Dinara, Kharwath,<br>
+                            Rohtas, Bihar, 802215
+                        </address>
+                        <a href="https://maps.google.com/?q=Karhansi+Dinara+Rohtas+Bihar" target="_blank" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition mt-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 Hari Om Galla Bhandar. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- Golden Grain/Thread Animation ---
+        const canvas = document.getElementById('grainCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let particles = [];
+        
+        // Configuration
+        const particleCount = 60; 
+        const connectionDistance = 160;
+        const mouseDistance = 250;
+        
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        const mouse = { x: null, y: null };
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.3; 
+                this.vy = (Math.random() - 0.5) * 0.3; 
+                this.size = Math.random() * 2 + 0.5;
+                // Color: Gold/Amber hues
+                this.color = `rgba(251, 191, 36, ${Math.random() * 0.5 + 0.3})`; 
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+
+                // Mouse interaction
+                if (mouse.x != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx*dx + dy*dy);
+                    if (distance < mouseDistance) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouseDistance - distance) / mouseDistance;
+                        const directionX = forceDirectionX * force * 0.05;
+                        const directionY = forceDirectionY * force * 0.05;
+                        this.vx += directionX;
+                        this.vy += directionY;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < connectionDistance) {
+                        ctx.beginPath();
+                        let opacity = 1 - (distance / connectionDistance);
+                        // Line Color: Golden thread
+                        ctx.strokeStyle = `rgba(217, 119, 6, ${opacity * 0.15})`; 
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
